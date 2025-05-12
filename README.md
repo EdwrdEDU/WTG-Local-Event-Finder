@@ -26,7 +26,7 @@ Local Event Finder is a web application built using **Laravel** and **CSS** that
 ## 🚀 Installation
 
 1. Clone the repository:
-git clone https://github.com/yourusername/local-event-finder.git
+git clone https://github.com/FeliEdwrd/WTG-Local-Event-Finder.git
 
 2. Navigate into the project folder:
 cd local-event-finder
