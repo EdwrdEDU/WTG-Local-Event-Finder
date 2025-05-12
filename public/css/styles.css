@@ -1,0 +1,12 @@
+form.d-flex{
+  border: 2px solid red;
+  padding: 3px 10px 3px 25px;
+  border-radius: 25px;
+}
+
+button.btn{
+  border: 2px solid red;
+  border-radius: 45%;
+  margin-left: 18px;
+}
+
