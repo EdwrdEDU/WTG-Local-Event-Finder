@@ -250,7 +250,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <div class="hero-section" style="background-image: url('/api/placeholder/1200/500')">
+    <div class="hero-section" style="background-image: url('https://videos.boilerroom.tv/assets/fred-again-london-slack-vndedikiow.jpg')">
       <div class="container">
         <div class="hero-content">
           <h1 class="hero-title">Find amazing events near you</h1>
