@@ -17,9 +17,6 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Route::view('/home', 'homepage')->name('homepage');
-
-
 Route::get('/home', function () {
     return view('homepage');
 });
