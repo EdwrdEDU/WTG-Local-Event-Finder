@@ -8,6 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <link href="{{ asset('css/homepage.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/login.css') }}" rel="stylesheet">
   <style>
     :root {
       --primary-color: #f05537;

@@ -1,27 +1,42 @@
 <x-layout>
-  <div class="account-container-login">
-      <div class="container-inner">
-          <h2 class="text-banner">Login</h2>
-
-          <form action="/login" method="POST" class="space-y-4">
-              @csrf
-
-              <div class="account-item">
-                  <label for="email">Email</label>
-                  <input class="input-field" type="email" id="email" name="email" required>
-              </div>
-
-              <div class="account-item">
-                  <label for="password">Password</label>
-                  <input class="input-field" type="password" id="password" name="password" required>
-              </div>
-
-              <div class="create-button">
-                  <button type="submit" style="background: none; border: none; color: white;">Login</button>
-              </div>
-          </form>
-          <p class="dont"><a href="/reset-password" class="text-blue-600 hover:underline">Forgot your password</a></p>
-          <p class="dont">Don't have an account? <a href="/create-account" class="text-blue-600 hover:underline">Sign up here</a>.</p>
-      </div>
-  </div>
+ <div class="login-container">
+    <div class="login-panel">
+        <div class="login-logo">
+            <a href="/" class="text-decoration-none">
+                <span class="wtg-logo">WTG?</span>
+            </a>
+        </div>
+        <div class="login-welcome">
+            <h1>Welcome!</h1>
+            <h2>Sign in to your account</h2>
+        </div>
+        <form action="/login" method="POST" class="login-form">
+            @csrf
+            <div class="form-group mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group mb-4">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-group mb-3 forgot-password">
+                <a href="/forgot-password">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn login-btn">
+                Sign In
+            </button>
+        </form>
+        <div class="register-link">
+            <p>Don't have an account? <a href="/create-account">Sign up</a></p>
+        </div>
+        <div class="terms-notice">
+            <p>By signing in, you agree to WTG?'s
+                <a href="/terms-of-service">Terms of Service</a> and
+                <a href="/privacy-policy">Privacy Policy</a>.
+            </p>
+        </div>
+        <div class="help-link">
+            <a href="/help">Need help finding your tickets?</a>
+        </div>
+    </div>
+ </div>
 </x-layout>
