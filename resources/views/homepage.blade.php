@@ -40,6 +40,7 @@
     
     .form-control {
       border-radius: 20px;
+      width: 300px;
     }
     
     .hero-section {
