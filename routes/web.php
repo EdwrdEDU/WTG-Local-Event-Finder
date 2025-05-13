@@ -19,7 +19,8 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('homepage');
-});
+})->name('homepage');
+
 
 Route::get('/create-account', function () {
     return view('account.create');
