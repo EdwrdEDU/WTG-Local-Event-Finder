@@ -50,7 +50,8 @@
       </div>
       <div class="col-md-4">
         <div class="event-card">
-        <img src="{{ asset('images/TheKoolPals-Bar.jpg') }}" class="event-img" alt="Event image">
+        
+        <img src="{{ asset('/images/2022-WDW-EPCOT-international-food-and-wine-festival-atmosphere-entrance-decorations-stock-9.jpg') }}" class="event-img" alt="Event image">
           <div class="p-3">
             <div class="event-date">Sun, May 18 • 10:00 AM</div>
             <h3 class="event-title">Food & Wine Exhibition</h3>
@@ -63,7 +64,7 @@
       </div>
       <div class="col-md-4">
         <div class="event-card">
-          <img src="{{ asset('/images/2022-WDW-EPCOT-international-food-and-wine-festival-atmosphere-entrance-decorations-stock-9.jpg') }}" class="event-img" alt="Event image">
+        <img src="{{ asset('images/TheKoolPals-Bar.jpg') }}" class="event-img" alt="Event image">
           <div class="p-3">
             <div class="event-date">Fri, May 23 • 8:30 PM</div>
             <h3 class="event-title">Comedy Night: Stand-up Special</h3>
