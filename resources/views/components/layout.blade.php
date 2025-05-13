@@ -46,6 +46,7 @@
     
     .form-control {
       border-radius: 20px;
+      width: 200px;
     }
     
     .main-content {
