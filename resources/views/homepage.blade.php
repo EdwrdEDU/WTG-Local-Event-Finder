@@ -250,7 +250,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <div class="hero-section" style="background-image: url('https://videos.boilerroom.tv/assets/fred-again-london-slack-vndedikiow.jpg')">
+    <div class="hero-section" style="background-image: url('{{ asset('images/fred-again-london-slack-vndedikiow.jpg') }}')">
       <div class="container">
         <div class="hero-content">
           <h1 class="hero-title">Find amazing events near you</h1>
@@ -276,7 +276,8 @@
         <div class="col-md-4">
           <div class="event-card">
             <div class="position-relative">
-              <img src="/api/placeholder/400/250" class="event-img" alt="Event image">
+            <img src="{{ asset('images/glastonbury.jpg') }}" class="event-img" alt="Event image">
+
               <span class="featured-badge">Featured</span>
             </div>
             <div class="p-3">
@@ -291,7 +292,7 @@
         </div>
         <div class="col-md-4">
           <div class="event-card">
-            <img src="/api/placeholder/400/250" class="event-img" alt="Event image">
+          <img src="{{ asset('/images/2022-WDW-EPCOT-international-food-and-wine-festival-atmosphere-entrance-decorations-stock-9.jpg') }}" class="event-img" alt="Event image">
             <div class="p-3">
               <div class="event-date">Sun, May 18 • 10:00 AM</div>
               <h3 class="event-title">Food & Wine Exhibition</h3>
@@ -304,7 +305,7 @@
         </div>
         <div class="col-md-4">
           <div class="event-card">
-            <img src="/api/placeholder/400/250" class="event-img" alt="Event image">
+            <img src="{{ asset('/images/2022-WDW-EPCOT-international-food-and-wine-festival-atmosphere-entrance-decorations-stock-9.jpg') }}" class="event-img" alt="Event image">
             <div class="p-3">
               <div class="event-date">Fri, May 23 • 8:30 PM</div>
               <h3 class="event-title">Comedy Night: Stand-up Special</h3>
