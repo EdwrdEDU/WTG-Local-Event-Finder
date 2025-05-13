@@ -48,8 +48,13 @@
     }
     
     .main-content {
-      flex: 1;
-    }
+  flex: 1;
+  border: 1px ; 
+  padding: 20px; 
+  margin: 20px;  
+  box-sizing: border-box; 
+}
+
   </style>
 </head>
 <body>
