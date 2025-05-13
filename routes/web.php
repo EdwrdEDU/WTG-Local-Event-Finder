@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,3 +41,5 @@ Route::get('/contacts', function () {
 Route::get('/help-center', function () {
     return view('helpcenter.index');
 });
+
+Route::post('/account', [AccountController::class, 'store'])->name('account.store');
