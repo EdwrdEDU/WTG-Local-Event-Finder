@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <link href="{{ asset('css/homepage.css') }}" rel="stylesheet">
   <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/signup.css') }}" rel="stylesheet">
   <style>
     :root {
       --primary-color: #f05537;
