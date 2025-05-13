@@ -35,7 +35,7 @@
             </p>
         </div>
         <div class="help-link">
-            <a href="/help">Need help finding your tickets?</a>
+            <a href="/help-center">Need help finding your tickets?</a>
         </div>
     </div>
  </div>
