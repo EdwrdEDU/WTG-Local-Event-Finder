@@ -1,3 +1,3 @@
 <x-layout>
-  <h1>HELLOOOs  </h1>
+  <h1>create</h1>
 </x-layout>

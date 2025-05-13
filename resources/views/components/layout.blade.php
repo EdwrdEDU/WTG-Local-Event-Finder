@@ -33,25 +33,24 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="gap: 15px; display: flex;">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/">Contacts</a>
+            <a class="nav-link" aria-current="page" href="/contacts">Contacts</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Create Events</a>
+            <a class="nav-link" href="/create-events">Create Events</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Help Center
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/home">Help Center</a></li>
-              <li><a class="dropdown-item" href="/">Contact Event Organizer</a></li>
+              <li><a class="dropdown-item" href="/help-center">Help Center</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sign In</a>
+            <a class="nav-link" href="/login">Log In</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sign Up</a>
+            <a class="nav-link" href="/create-account">Sign Up</a>
           </li>
         </ul>
       </div>
