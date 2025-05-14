@@ -10,10 +10,10 @@
   <link href="{{ asset('css/homepage.css') }}" rel="stylesheet">
   <link href="{{ asset('css/login.css') }}" rel="stylesheet">
   <link href="{{ asset('css/signup.css') }}" rel="stylesheet">
-<<<<<<< HEAD
+
   <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
   <link href="{{ asset('css/contacts.css') }}" rel="stylesheet">
-=======
+</head>
   <style>
     :root {
       --primary-color: #f05537;
