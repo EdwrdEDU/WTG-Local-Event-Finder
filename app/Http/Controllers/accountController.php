@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller
 {
-    
-
     public function store(Request $request)
     {
         $validatedData = $request->validate([
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
-            'email' => 'required|email|unique:accounts,email', // table name must match!
+            'email' => 'required|email|unique:accounts,email',
             'password' => 'required|string|min:8|confirmed',
         ]);
 
@@ -26,31 +25,30 @@ class AccountController extends Controller
         $account->password = bcrypt($validatedData['password']);
         $account->save();
 
+        Auth::login($account); // Auto-login after registration (optional)
+
         return redirect('/home')->with('success', 'Account created successfully!');
     }
 
     public function login(Request $request)
-{
-    // Validate input
-    $credentials = $request->validate([
-        'email' => 'required|email',
-        'password' => 'required|string',
-    ]);
+    {
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|string',
+        ]);
 
-    // Get the user by email
-    $account = \App\Models\Account::where('email', $credentials['email'])->first();
+        $account = Account::where('email', $credentials['email'])->first();
 
-    // Check if user exists and password is correct
-    if ($account && Hash::check($credentials['password'], $account->password)) {
-        Auth::login($account);
-        $request->session()->regenerate();
+        if ($account && Hash::check($credentials['password'], $account->password)) {
+            Auth::login($account); // manually login the user
+            $request->session()->regenerate();
 
-        return redirect('/home')->with('success', 'Logged in successfully!');
+            return redirect('/home')->with('success', 'Logged in successfully!');
+        }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
     }
+}
 
-    // If login fails
-    return back()->withErrors([
-        'email' => 'The provided credentials do not match our records.',
-    ])->onlyInput('email');
-}
-}
