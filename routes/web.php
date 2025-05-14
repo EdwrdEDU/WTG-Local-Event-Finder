@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -12,3 +13,4 @@ Route::get('/contacts', function () {return view('contacts.index');});
 Route::get('/help-center', function () {return view('helpcenter.index');});
 Route::post('/register', [AccountController::class, 'store'])->name('account.store');
 Route::post('/login', [AccountController::class, 'login'])->name('account.login');
+Route::post('/events', [EventController::class, 'store'])->name('events.store');
