@@ -10,50 +10,9 @@
   <link href="{{ asset('css/homepage.css') }}" rel="stylesheet">
   <link href="{{ asset('css/login.css') }}" rel="stylesheet">
   <link href="{{ asset('css/signup.css') }}" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #f05537;
-      --secondary-color: #1e0a3c;
-      --text-light: #ffffff;
-      --text-dark: #39364f;
-      --accent-color: #3659e3;
-    }
-    
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      color: var(--text-dark);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .navbar {
-      background-color: var(--primary-color);
-      padding: 1rem;
-    }
-    
-    .navbar-brand {
-      font-family: 'Anton', sans-serif;
-      color: var(--text-light);
-      font-size: 1.8rem;
-      margin-right: 2rem;
-    }
-    
-    .nav-link {
-      color: var(--text-light);
-      font-weight: 500;
-    }
-    
-    .form-control {
-      border-radius: 20px;
-    }
-    
-    .main-content {
-  flex: 1;
+  <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/contacts.css') }}" rel="stylesheet">
   
-    }
-
-  </style>
 </head>
 <body>
   <!-- Navbar -->
