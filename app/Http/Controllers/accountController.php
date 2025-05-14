@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Account;  // Assuming your Account model is here
+use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller
 {
@@ -29,25 +29,28 @@ class AccountController extends Controller
         return redirect('/home')->with('success', 'Account created successfully!');
     }
 
-    // Login method (POST request)
     public function login(Request $request)
-    {
-        // Validate login form input
-        $credentials = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|string|min:8',
-        ]);
+{
+    // Validate input
+    $credentials = $request->validate([
+        'email' => 'required|email',
+        'password' => 'required|string',
+    ]);
 
-        // Attempt to authenticate the user
-        if (Auth::attempt($credentials)) {
-            // If authentication is successful, redirect to the intended page
-            return redirect()->intended('/home');
-        }
+    // Get the user by email
+    $account = \App\Models\Account::where('email', $credentials['email'])->first();
 
-        // If authentication fails, redirect back with an error message
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+    // Check if user exists and password is correct
+    if ($account && Hash::check($credentials['password'], $account->password)) {
+        Auth::login($account);
+        $request->session()->regenerate();
+
+        return redirect('/home')->with('success', 'Logged in successfully!');
     }
-}
 
+    // If login fails
+    return back()->withErrors([
+        'email' => 'The provided credentials do not match our records.',
+    ])->onlyInput('email');
+}
+}

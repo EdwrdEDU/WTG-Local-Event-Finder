@@ -24,33 +24,9 @@
                     <p>Current WTG? customers can <a href="/customer-support" class="highlight-link">contact customer support</a>. Your support options are based on your plan or package.</p>
                 </div>
 
-                <div class="rating-section">
-                    <div class="stars">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star half">★</span>
-                    </div>
-                    <span class="rating-text">4.6 star rating on Capterra from 4664 reviews</span>
-                </div>
+                
 
-                <div class="award-badges">
-                    <div class="badge">
-                        <div class="badge-content">CAPTERRA SHORTLIST 2023</div>
-                    </div>
-                    <div class="badge">
-                        <div class="badge-content">GETAPP LEADERS 2022</div>
-                    </div>
-                    <div class="badge">
-                        <div class="badge-content">FRONTEND RUNNERS 2023</div>
-                    </div>
-                    <div class="badge">
-                        <div class="badge-content">G2 LEADER 2023</div>
-                    </div>
-                </div>
-            </div>
-
+               
             <!-- Right Column - Contact Form -->
             <div class="content-right">
                 <p class="form-info">
