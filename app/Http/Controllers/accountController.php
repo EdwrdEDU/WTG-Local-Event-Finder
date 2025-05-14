@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class accountController extends Controller
 {
@@ -26,4 +27,28 @@ class accountController extends Controller
     return redirect('/home')->with('success', 'Account created successfully!');
     }
 
+    public function login(Request $request)
+{
+    // Validate input
+    $credentials = $request->validate([
+        'email' => 'required|email',
+        'password' => 'required|string',
+    ]);
+
+    // Get the user by email
+    $account = \App\Models\Account::where('email', $credentials['email'])->first();
+
+    // Check if user exists and password is correct
+    if ($account && Hash::check($credentials['password'], $account->password)) {
+        Auth::login($account);
+        $request->session()->regenerate();
+
+        return redirect('/home')->with('success', 'Logged in successfully!');
+    }
+
+    // If login fails
+    return back()->withErrors([
+        'email' => 'The provided credentials do not match our records.',
+    ])->onlyInput('email');
+}
 }
