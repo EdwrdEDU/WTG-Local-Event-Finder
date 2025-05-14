@@ -45,36 +45,6 @@ Route::get('/help-center', function () {
 
 Route::post('/account', [AccountController::class, 'store'])->name('account.store');
 
-
-
-
-Route::get('/', function () {
-    return view('landing');
-});
-
-
-Route::get('/create-account', function () {
-    return view('account.create');
-});
-
-Route::get('/login', function () {
-    return view('account.login');
-});
-
-Route::get('/create-events', function () {
-    return view('events.create');
-});
-
-Route::get('/contacts', function () {
-    return view('contacts.index');
-});
-
-Route::get('/help-center', function () {
-    return view('helpcenter.index');
-});
-
-Route::post('/account', [AccountController::class, 'store'])->name('account.store');
-
 Route::post('/interests/save', [App\Http\Controllers\InterestController::class, 'save'])->name('interests.save');
 Route::get('/home', [HomeController::class, 'index'])->name('homepage');
 Route::post('/login', [AccountController::class, 'login'])->name('login.post');
