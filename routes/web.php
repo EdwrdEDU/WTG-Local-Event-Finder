@@ -3,7 +3,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\EventController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
