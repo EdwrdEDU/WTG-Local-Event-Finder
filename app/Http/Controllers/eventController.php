@@ -3,42 +3,47 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Event;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Http;
 
 class EventController extends Controller
 {
-    public function store(Request $request)
-    {
-        // Validate incoming form data
-        $validated = $request->validate([
-            'title'         => 'required|string|max:255',
-            'organizer'     => 'nullable|string|max:255',
-            'description'   => 'required|string',
-            'category_id'   => 'required|integer',
-            'event_type'    => 'required|string|in:in-person,online,hybrid',
-            'image'         => 'required|image|max:2048',
-            'start_date'    => 'required|date',
-            'start_time'    => 'required',
-            'venue_name'    => 'nullable|string|max:255',
-            'address'       => 'nullable|string|max:255',
-            'tickets'       => 'nullable|array',
-            'agree_terms'   => 'required|accepted',
-        ]);
+    public function fetchEvents($category)
+{
+    $segmentMap = [
+        'music' => 'KZFzniwnSyZfZ7v7nJ',
+        'sports' => 'KZFzniwnSyZfZ7v7nE',
+        'arts' => 'KZFzniwnSyZfZ7v7na',
+        'miscellaneous' => 'KZFzniwnSyZfZ7v7n1',
+    ];
 
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('event-images', 'public');
-            $validated['image_path'] = $imagePath;
-        }
+    $segmentId = $segmentMap[strtolower($category)] ?? null;
 
-        if ($request->has('tickets')) {
-            $validated['tickets'] = json_encode($request->input('tickets'));
-        }
-
-        $validated['is_published'] = true;
-
-        Event::create($validated);
-
-        return redirect()->back()->with('success', 'Event published successfully!');
+    if (!$segmentId) {
+        return response()->json(['events' => []]);
     }
+
+    $response = Http::get('https://app.ticketmaster.com/discovery/v2/events.json', [
+        'apikey' => env('TICKETMASTER_API_KEY'),
+        'segmentId' => $segmentId,
+        'size' => 10,
+    ]);
+
+    $events = $response->json()['_embedded']['events'] ?? [];
+
+    // Prepare events data
+    $formattedEvents = array_map(function ($event) {
+        return [
+            'name' => $event['name'],
+            'date' => $event['dates']['start']['localDate'] ?? 'N/A',
+            'venue' => $event['_embedded']['venues'][0]['name'] ?? 'N/A',
+            'url' => $event['url'],
+            'imageUrl' => $event['images'][0]['url'] ?? 'https://via.placeholder.com/150',
+        ];
+    }, $events);
+
+    return response()->json(['events' => $formattedEvents]);
 }
+
+
+}
+
