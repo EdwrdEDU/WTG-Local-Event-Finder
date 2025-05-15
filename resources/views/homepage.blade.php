@@ -401,4 +401,4 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 </script>
-</x-layouts>
+</x-layout>

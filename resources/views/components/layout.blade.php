@@ -14,6 +14,8 @@
   <link href="{{ asset('css/contacts.css') }}" rel="stylesheet">
   <link href="{{ asset('css/create-event.css') }}" rel="stylesheet">
   <link href="{{ asset('css/contacts.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/help-center.css') }}" rel="stylesheet">
+  
   
  
 </head>
@@ -119,5 +121,9 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js"></script>
+  <script src="{{ asset('js/help-center.js') }}"></script>
+
+
+
 </body>
 </html>
