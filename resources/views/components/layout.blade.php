@@ -43,7 +43,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="gap: 15px; display: flex;">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/contacts">Contacts</a>
+            <a class="nav-link" aria-current="page" href="/contacts">Contact Us</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/create-events">Create Events</a>
