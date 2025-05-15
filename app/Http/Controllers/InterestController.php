@@ -21,5 +21,6 @@ public function save(Request $request)
     $user->interests()->sync($interestIds);
     
     return response()->json(['success' => true]);
+    // Optionally, you can return the saved interests or a success message
 }
 }

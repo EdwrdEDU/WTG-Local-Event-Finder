@@ -2,11 +2,57 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 class EventController extends Controller
 {
+    public function store(Request $request)
+    {
+        // Validate form input
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'organizer' => 'nullable|string|max:255',
+            'description' => 'required|string',
+            'category_id' => 'required|integer',
+            'event_type' => 'required|string|in:in-person,online,hybrid',
+            'image' => 'required|image|max:2048',
+            'start_date' => 'required|date',
+            'start_time' => 'required',
+            'venue_name' => 'nullable|string|max:255',
+            'address' => 'nullable|string|max:500',
+            'location' => 'required|string|max:255',
+            'tickets.name' => 'nullable|string|max:255',
+            'tickets.quantity' => 'nullable|integer|min:1',
+            'tickets.price' => 'nullable|numeric|min:0',
+            'agree_terms' => 'accepted'
+        ]);
+
+        // Handle image upload
+        $imagePath = $request->file('image')->store('events', 'public');
+
+        // Create event record
+        $event = Event::create([
+            'title' => $validated['title'],
+            'organizer' => $validated['organizer'] ?? null,
+            'description' => $validated['description'],
+            'category_id' => $validated['category_id'],
+            'event_type' => $validated['event_type'],
+            'image_path' => $imagePath,
+            'start_date' => $validated['start_date'],
+            'start_time' => $validated['start_time'],
+            'venue_name' => $validated['venue_name'] ?? null,
+            'address' => $validated['address'] ?? null,
+            'location' => $validated['location'], 
+            'ticket_name' => $request->input('tickets.name'),
+            'ticket_quantity' => $request->input('tickets.quantity'),
+            'ticket_price' => $request->input('tickets.price'),
+        ]);
+
+        return redirect('/events')->with('success', 'Event created successfully!');
+    }
+
     public function fetchEvents($category)
 {
     $segmentMap = [
@@ -42,8 +88,5 @@ class EventController extends Controller
     }, $events);
 
     return response()->json(['events' => $formattedEvents]);
+    }
 }
-
-
-}
-
