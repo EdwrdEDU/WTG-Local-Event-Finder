@@ -29,7 +29,7 @@ Local Event Finder is a web application built using **Laravel** and **CSS** that
 git clone https://github.com/EdwrdEDU/WTG-Local-Event-Finder.git
 
 2. Navigate into the project folder:
-cd local-event-finder
+cd WTG-Local-Event-Finder
 
 3. Install PHP dependencies:
 composer install
@@ -38,20 +38,18 @@ composer install
 npm install && npm run dev
 
 5. Copy the example environment file:
-cp .env.example .env
+copy .env.example .env
 
 6. Generate the application key:
 php artisan key:generate
 
-7. Configure your .env file with your database credentials.
-
-8. Run the database migrations and seeders:
+7. Run the database migrations and seeders:
 php artisan migrate --seed
 
-9. Start the development server:
+8. Start the development server:
 php artisan serve
 
-10. Open the app in your browser at:
+9. Open the app in your browser at:
 http://localhost:8000
 
 
