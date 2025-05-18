@@ -15,7 +15,7 @@ return new class extends Migration
 {
     Schema::create('user_interests', function (Blueprint $table) {
         $table->id();
-        $table->foreignId('user_id')->constrained()->onDelete('cascade');
+        $table->foreignId('user_id')->references('id')->on('accounts')->onDelete('cascade');
         $table->foreignId('interest_id')->constrained()->onDelete('cascade');
         $table->timestamps();
         
