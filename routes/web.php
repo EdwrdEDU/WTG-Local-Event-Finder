@@ -3,6 +3,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,8 @@ Route::post('/interests/save', [App\Http\Controllers\InterestController::class, 
 Route::get('/home', [HomeController::class, 'index'])->name('homepage');
 Route::post('/login', [AccountController::class, 'login'])->name('login.post');
 
+Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 Route::get('/account/create', function () {
     return view('account.create'); 
