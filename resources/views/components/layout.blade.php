@@ -15,6 +15,7 @@
   <link href="{{ asset('css/create-event.css') }}" rel="stylesheet">
   <link href="{{ asset('css/contacts.css') }}" rel="stylesheet">
   <link href="{{ asset('css/help-center.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/account-view.css') }}" rel="stylesheet">
   
   
  

@@ -31,6 +31,10 @@ Route::get('/login', function () {
     return view('account.login');
 });
 
+Route::get('/search-page', function () {
+    return view('account-view.search-page');
+});
+
 Route::get('/create-events', function () {
     return view('events.create');
 });
