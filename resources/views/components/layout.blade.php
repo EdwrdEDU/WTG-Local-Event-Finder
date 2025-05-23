@@ -28,7 +28,7 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <form class="d-flex" role="search">
+      <form class="d-flex" role="search" action="{{ url('/search-page') }}" method="GET">
         <input class="form-control" type="search" placeholder="Search Events" aria-label="Search"/>
         <div class="vr mx-3" style="background-color: white;"></div>
         <div class="d-flex align-items-center">
@@ -49,14 +49,11 @@
           <li class="nav-item">
             <a class="nav-link" href="/create-events">Create Events</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="nav-item">
+          <a class="nav-link" href="/help-center">
               Help Center
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/help-center">Help Center</a></li>
-            </ul>
-          </li>
+          </a>
+      </li>
           <li class="nav-item">
             <a class="nav-link" href="/login">Log In</a>
           </li>
